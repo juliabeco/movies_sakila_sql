@@ -40,7 +40,7 @@ Throughout this project, the following concepts and techniques were applied:
 1. Download or clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/movie_sakila_sql.git
+   git clone https://github.com/juliabeco/movies_sakila_sql.git
 2. Open MySQL Workbench or your preferred SQL editor.
 
 3. Import the Sakila sample database if you haven't already. Instructions here: Install Sakila DB
