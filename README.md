@@ -62,15 +62,15 @@ Throughout this project, the following concepts and techniques were applied:
 
 ![Sakila ER Diagram](resources/Diagram.PNG)
 
-- 📊 Example Query
+- 📊 Example Queries
 
 ```sql
--- Is there any actor or actress who does not appear in any movie in the film_actor table?
-SELECT a.actor_id, COUNT(fa.film_id) AS cantidad_peliculas
-FROM actor AS a
-LEFT JOIN film_actor AS fa USING(actor_id)
-GROUP BY a.actor_id
-HAVING cantidad_peliculas <1; -- None found
+-- Count the total number of movies rented by each customer and show their ID, first name, and last name.
+SELECT c.customer_id AS id, c.first_name, c.last_name, COUNT(r.rental_id) AS total_rented
+FROM customer AS c
+LEFT JOIN rental AS r USING(customer_id)
+GROUP BY id
+ORDER BY total_rented DESC; -- 599 customers
 
 -- To check which actor has the minimum number of movie appearances:
 SELECT a.actor_id, COUNT(fa.film_id) AS cantidad_peliculas
@@ -83,7 +83,7 @@ LIMIT 1;
 
 - ✅ Example of the `.sql` file and its result
 
-![Query Example](resources/query_example.PNG)
+![Query Example](resources/query18.PNG)
 
 ---
 
